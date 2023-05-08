@@ -2,40 +2,56 @@ package sim;
 import java.util.Random;
 
 /**
-* Create new Airlines
+* The airline class
 * @author Ansor Kasimov
-* @version 1.0.0
 */
 
 public class Airline {
 
-	// Plane's ID
+	/** ID */
 	private String flightID;
-	// Plane's ID number
+	/** Random value */
 	private int num;
-	// Time a plane entered a queue
+	/** Time the plane entered a queue */
 	private long entered;
-	
-	// Constructor requires the id & time entered
+
+	/**
+	 * Airline Constructor
+	 * @param ID the plane String ID
+	 * @param entered the plane queue entry time
+	 */
 	public Airline(String ID, long entered) {
 		flightID = ID;
+
+		// Random integer between [10, 29]
 		num = new Random().nextInt(20) + 10;
+
 		this.entered = entered;
 	}
-	
-	/** @return ID string */
+
+	/**
+	 * Return plane's ID
+	 * @return flightID
+	 */
 	public String getID() {
 		return flightID;
 	}
-	
-	/** @return time entered */
+
+	/**
+	 * Return plane's entered time
+	 * @return entered
+	 */
 	public long getEntered() {
 		return entered;
 	}
-	
-	/** @return string representation of the Airline */
+
+	/**
+	 * Return String representation of
+	 * plane
+	 * @return flightID + num
+	 */
+	@Override
 	public String toString() {
 		return flightID + num;
 	}
-	
 }
